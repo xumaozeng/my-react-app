@@ -1,8 +1,10 @@
 import React from "react";
+import ReactReduxPage from "./pages/ReactReduxPage";
+// import ReduxPage from "./pages/ReduxPage";
 // import ClassComponent from "./pages/ClassComponent";
 // import FunctionComponent from "./pages/FunctionComponent";
 // import HelloMessage from "./pages/HelloMessage ";
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 // import UserPage from "./pages/UserPage";
 // import SetStatePage from "./pages/SetStatePage";
 
@@ -13,8 +15,10 @@ function App() {
       {/* <FunctionComponent /> */}
       {/* <SetStatePage /> */}
       {/* <HelloMessage name="徐茂增" /> */}
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <UserPage /> */}
+      {/* <ReduxPage /> */}
+      <ReactReduxPage />
     </div>
   );
 }

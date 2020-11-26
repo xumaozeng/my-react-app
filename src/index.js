@@ -5,6 +5,8 @@ import App from "./App";
 // import logo from "./logo.svg";
 // import styles from "./index.module.scss"; // 模块化
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import store from "./store";
 
 /**
  * React负责逻辑控制，数据->VDOM
@@ -48,7 +50,12 @@ import reportWebVitals from "./reportWebVitals";
 //   </div>
 // );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
