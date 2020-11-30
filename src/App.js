@@ -1,5 +1,6 @@
 import React from "react";
-import ReactReduxPage from "./pages/ReactReduxPage";
+import HookPage from "./pages/HookPage";
+// import ReactReduxPage from "./pages/ReactReduxPage";
 // import ReduxPage from "./pages/ReduxPage";
 // import ClassComponent from "./pages/ClassComponent";
 // import FunctionComponent from "./pages/FunctionComponent";
@@ -18,7 +19,8 @@ function App() {
       {/* <HomePage /> */}
       {/* <UserPage /> */}
       {/* <ReduxPage /> */}
-      <ReactReduxPage />
+      {/* <ReactReduxPage /> */}
+      <HookPage />
     </div>
   );
 }
