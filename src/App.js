@@ -1,5 +1,7 @@
 import React from "react";
-import CustomHookPage from "./pages/CustomHookPage";
+import UseMemoPage from "./pages/UseMemoPage";
+// import UseMemoPage from "./pages/UseMemoPage";
+// import CustomHookPage from "./pages/CustomHookPage";
 // import HookPage from "./pages/HookPage";
 // import ReactReduxPage from "./pages/ReactReduxPage";
 // import ReduxPage from "./pages/ReduxPage";
@@ -22,7 +24,9 @@ function App() {
       {/* <ReduxPage /> */}
       {/* <ReactReduxPage /> */}
       {/* <HookPage /> */}
-      <CustomHookPage />
+      {/* <CustomHookPage /> */}
+      {/* <UseMemoPage /> */}
+      <UseMemoPage />
     </div>
   );
 }
