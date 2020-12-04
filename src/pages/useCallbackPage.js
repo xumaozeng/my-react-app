@@ -1,6 +1,6 @@
 import React, { useState, useCallback, PureComponent } from "react";
 
-function useCallbackPage(props) {
+function UseCallbackPage(props) {
   const [count, setCount] = useState(0);
   const addClick = useCallback(() => {
     let sum = 0;
@@ -12,7 +12,7 @@ function useCallbackPage(props) {
   const [value, setValue] = useState("");
   return (
     <div>
-      <h3>useCallbackPage</h3>
+      <h3>UseCallbackPage</h3>
       <p>{count}</p>
       <button onClick={() => setCount(count + 1)}>add</button>
       <input value={value} onChange={event => setValue(event.target.value)} />
@@ -34,4 +34,4 @@ class Child extends PureComponent {
   }
 }
 
-export default useCallbackPage;
+export default UseCallbackPage;

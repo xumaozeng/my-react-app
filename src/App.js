@@ -1,5 +1,6 @@
 import React from "react";
-import UseMemoPage from "./pages/UseMemoPage";
+import TickClockPage from "./pages/TickClockPage";
+// import UseCallbackPage from "./pages/UseCallbackPage";
 // import UseMemoPage from "./pages/UseMemoPage";
 // import CustomHookPage from "./pages/CustomHookPage";
 // import HookPage from "./pages/HookPage";
@@ -26,7 +27,8 @@ function App() {
       {/* <HookPage /> */}
       {/* <CustomHookPage /> */}
       {/* <UseMemoPage /> */}
-      <UseMemoPage />
+      {/* <UseCallbackPage /> */}
+      <TickClockPage />
     </div>
   );
 }
