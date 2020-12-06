@@ -1,5 +1,10 @@
 import React from "react";
-import TickClockPage from "./pages/TickClockPage";
+import MyRCForm from "./pages/MyRCForm";
+// import HocPage from "./pages/HocPage";
+// import Toggle from "./pages/Toggle";
+// import Clock from "./pages/Clock";
+// import DialogPage from "./pages/DialogPage";
+// import TickClockPage from "./pages/TickClockPage";
 // import UseCallbackPage from "./pages/UseCallbackPage";
 // import UseMemoPage from "./pages/UseMemoPage";
 // import CustomHookPage from "./pages/CustomHookPage";
@@ -28,7 +33,12 @@ function App() {
       {/* <CustomHookPage /> */}
       {/* <UseMemoPage /> */}
       {/* <UseCallbackPage /> */}
-      <TickClockPage />
+      {/* <TickClockPage /> */}
+      {/* <DialogPage /> */}
+      {/* <Clock /> */}
+      {/* <Toggle /> */}
+      {/* <HocPage /> */}
+      <MyRCForm />
     </div>
   );
 }
