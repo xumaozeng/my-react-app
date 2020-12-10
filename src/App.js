@@ -1,10 +1,10 @@
 import React from "react";
-import MyRCForm from "./pages/MyRCForm";
+import FatherPage from "./pages/FatherPage";
 
 function App() {
   return (
     <div className="App">
-      <MyRCForm />
+      <FatherPage />
     </div>
   );
 }
