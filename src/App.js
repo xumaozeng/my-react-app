@@ -1,10 +1,10 @@
 import React from "react";
-import FatherPage from "./pages/FatherPage";
+import ClassComponent from "./pages/ClassComponent";
 
 function App() {
   return (
     <div className="App">
-      <FatherPage />
+      <ClassComponent />
     </div>
   );
 }

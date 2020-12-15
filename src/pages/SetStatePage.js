@@ -1,52 +1,48 @@
 import React, { Component } from "react";
 
-export default class SetStatePage extends Component {
+class SetStatePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       counter: 0
     };
-    this.setCounter = this.setCounter.bind(this);
   }
   componentDidMount() {
     // this.changeValue(1);
     // document.getElementById("test").addEventListener("click", this.setCounter);
   }
-  // 实例属性
-  changeValue(v) {
-    // setState在合成事件和生命周期中是异步的，这里说的异步其实是批量更行的，达到了性能优化的目的
-    this.setState(
-      {
-        counter: this.state.counter + v
-      },
-      () => {
-        // callback就是在state更新完成之后执行
-        console.log("counter", this.state.counter);
-      }
-    );
-    /* this.setState(state => {
-      // 链式调用，参数是函数
-      return {
-        counter: state.counter + v
-      };
+  changeValue = v => {
+    // setState在合成事件和生命周期中是异步的，这里的异步是指批量更新，达到性能优化的目的
+    /* this.setState({ counter: this.state.counter + v }, () => {
+      // callback就是在state更新完成之后在执行
+      console.log("counter:", this.state.counter);
     }); */
-  }
-  setCounter() {
-    // setState在setTimeout和原生事件中是同步的
-    // setTimeout(() => {
+    // console.log("counter:", this.state.counter);
+    // 批量叠加更新：setState第一个参数是函数
+    this.setState(state => {
+      return { counter: state.counter + v };
+    });
+  };
+  setCounter = () => {
     this.changeValue(1);
-    // this.changeValue(2);
-    // this.changeValue(3);
-    // }, 0);
-  }
+    this.changeValue(2);
+    /**
+     * setState在setTimeout和原生事件中是同步的，
+     * 同步是指立马能拿到最新的值，还可以在setState(object|function, callback)
+     * 第二个回调函数中拿到最新的值
+     */
+    /* setTimeout(() => {
+      this.changeValue(1);
+    }, 0); */
+  };
   render() {
-    const { counter } = this.state;
     return (
       <div>
         <h3>SetStatePage</h3>
-        <button onClick={this.setCounter}>{counter}</button>
-        {/* <button id="test">原生事件*{counter}</button> */}
+        <button onClick={this.setCounter}>{this.state.counter}</button>
+        {/* <button id="test">原生事件*{this.state.counter}</button> */}
       </div>
     );
   }
 }
+export default SetStatePage;

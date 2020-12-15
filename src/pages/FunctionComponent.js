@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function FunctionComponent(props) {
+  // 初始化date
   const [date, setDate] = useState(new Date());
   useEffect(() => {
     // 副作用，相当于componentDidMount、componentDidUpdate、componentWillUnMount的集合
