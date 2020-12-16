@@ -1,10 +1,10 @@
 import React from "react";
-import ClassComponent from "./pages/ClassComponent";
+import WarnningBanner from "./pages/WarnningBanner";
 
 function App() {
   return (
     <div className="App">
-      <ClassComponent />
+      <WarnningBanner />
     </div>
   );
 }
