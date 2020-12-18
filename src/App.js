@@ -1,10 +1,10 @@
 import React from "react";
-import ReservationPage from "./pages/ReservationPage";
+import Calculator from "./pages/Calculator";
 
 function App() {
   return (
     <div className="App">
-      <ReservationPage />
+      <Calculator />
     </div>
   );
 }
