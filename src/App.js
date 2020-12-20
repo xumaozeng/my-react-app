@@ -1,10 +1,10 @@
 import React from "react";
-import Calculator from "./pages/Calculator";
+import WelcomeDialog from "./pages/WelcomeDialog";
 
 function App() {
   return (
     <div className="App">
-      <Calculator />
+      <WelcomeDialog />
     </div>
   );
 }

@@ -5,6 +5,13 @@ const scaleNames = {
   f: "Fahrenheit"
 };
 
+function BoilingVerdict(props) {
+  if (props.celsius >= 100) {
+    return <p>The water would boil.</p>;
+  }
+  return <p>The water would not boil.</p>;
+}
+
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }
@@ -24,19 +31,12 @@ function tryConvert(temperatrue, convert) {
 }
 
 class TemperatureInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      temperatrue: ""
-    };
-  }
-
   handleChange = e => {
-    this.setState({ temperatrue: e.target.value });
+    this.props.onTempertureChange(e.target.value);
   };
 
   render() {
-    const { temperatrue } = this.state;
+    const { temperatrue } = this.props;
     const scale = this.props.scale;
     return (
       <fieldset>
@@ -48,11 +48,41 @@ class TemperatureInput extends Component {
 }
 
 class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      temperatrue: "",
+      scale: "c"
+    };
+  }
+
+  handleCelsiusChange = temperatrue => {
+    this.setState({ scale: "c", temperatrue });
+  };
+
+  handleFahrenheitChange = temperatrue => {
+    this.setState({ scale: "f", temperatrue });
+  };
+
   render() {
+    const { scale, temperatrue } = this.state;
+    const celsius =
+      scale === "f" ? tryConvert(temperatrue, toCelsius) : temperatrue;
+    const fahrenheit =
+      scale === "c" ? tryConvert(temperatrue, toFahrenheit) : temperatrue;
     return (
       <div>
-        <TemperatureInput scale="c" />
-        <TemperatureInput scale="f" />
+        <TemperatureInput
+          scale="c"
+          temperatrue={celsius}
+          onTempertureChange={this.handleCelsiusChange}
+        />
+        <TemperatureInput
+          scale="f"
+          temperatrue={fahrenheit}
+          onTempertureChange={this.handleFahrenheitChange}
+        />
+        <BoilingVerdict celsius={parseFloat(celsius)} />
       </div>
     );
   }
