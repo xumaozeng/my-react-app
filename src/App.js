@@ -1,10 +1,10 @@
 import React from "react";
-import WelcomeDialog from "./pages/WelcomeDialog";
+import FilterableProductTable from "./pages/FilterableProductTable";
 
 function App() {
   return (
     <div className="App">
-      <WelcomeDialog />
+      <FilterableProductTable />
     </div>
   );
 }
