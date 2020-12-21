@@ -1,10 +1,10 @@
 import React from "react";
-import FilterableProductTable from "./pages/FilterableProductTable";
+import PureCompantPage from "./pages/PureCompantPage";
 
 function App() {
   return (
     <div className="App">
-      <FilterableProductTable />
+      <PureCompantPage />
     </div>
   );
 }
