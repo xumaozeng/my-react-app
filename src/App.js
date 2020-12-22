@@ -1,10 +1,10 @@
 import React from "react";
-import GlossaryPage from "./pages/GlossaryPage";
+import NameFormPage from "./pages/NameFormPage";
 
 function App() {
   return (
     <div className="App">
-      <GlossaryPage />
+      <NameFormPage />
     </div>
   );
 }
