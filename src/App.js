@@ -1,10 +1,10 @@
 import React from "react";
-import PureCompantPage from "./pages/PureCompantPage";
+import GlossaryPage from "./pages/GlossaryPage";
 
 function App() {
   return (
     <div className="App">
-      <PureCompantPage />
+      <GlossaryPage />
     </div>
   );
 }

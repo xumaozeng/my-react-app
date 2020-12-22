@@ -30,11 +30,15 @@ class SetStatePage extends Component {
      * setState在setTimeout和原生事件中是同步的，
      * 同步是指立马能拿到最新的值，还可以在setState(object|function, callback)
      * 第二个回调函数中拿到最新的值
+     * 第三个是在componentDidUpdate()组件更新生命周期钩子函数中获取最新的值
      */
     /* setTimeout(() => {
       this.changeValue(1);
     }, 0); */
   };
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state.counter);
+  }
   render() {
     return (
       <div>
