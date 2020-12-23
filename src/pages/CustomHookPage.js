@@ -30,7 +30,7 @@ function useClock() {
     }, 1000);
     // 清除定时器
     return () => clearInterval(timer);
-  });
+  }, []);
   return date;
 }
 

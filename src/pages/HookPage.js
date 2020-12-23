@@ -9,14 +9,15 @@ function HookPage(props) {
     console.log("count effect"); //sy-log
     // 更新title
     document.title = `React点击${count}次`;
-  }, [count]);
+  }, [count]); // 第二个参数是依据count改变来更新执行hook
 
   useEffect(() => {
+    console.log("timer effect");
     const timer = setInterval(() => {
       setDate(new Date());
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, []); // 不依赖任何值
   return (
     <div>
       <h3>HookPage</h3>

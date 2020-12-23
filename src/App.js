@@ -1,10 +1,10 @@
 import React from "react";
-import NameFormPage from "./pages/NameFormPage";
+import CustomHookPage from "./pages/CustomHookPage";
 
 function App() {
   return (
     <div className="App">
-      <NameFormPage />
+      <CustomHookPage />
     </div>
   );
 }
