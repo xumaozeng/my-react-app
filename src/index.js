@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 // import styles from "./index.module.scss"; // 模块化
-import { Provider } from "react-redux";
-import store from "./store";
+import { Provider } from "react-redux"; // 使后代组件都能获取到store
+import store from "./store/todoList";
 
 /**
  * React负责逻辑控制，数据->VDOM

@@ -1,10 +1,10 @@
 import React from "react";
-import CustomHookPage from "./pages/CustomHookPage";
+import RouterPage from "./pages/RouterPage";
 
 function App() {
   return (
     <div className="App">
-      <CustomHookPage />
+      <RouterPage />
     </div>
   );
 }
