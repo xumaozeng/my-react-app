@@ -1,0 +1,13 @@
+.todo-page {
+  margin: 10px;
+}
+
+.todo-input {
+  width: 250px;
+  margin-right: 10px;
+}
+
+.todo-list {
+  width: 400px;
+  margin-top: 20px;
+}

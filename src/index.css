@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  font-size: 24px;
-}
-
 .topBar {
   border-bottom: solid 1px black;
 }
@@ -41,9 +37,4 @@ body {
   margin-left: 20px;
   padding: 15px;
   border: red 1px solid;
-}
-
-/** add todo **/
-.add-todo {
-  margin-left: 0.5rem;
 }

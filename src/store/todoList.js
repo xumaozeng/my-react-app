@@ -1,38 +1,13 @@
-import { combineReducers, createStore } from "redux";
+import { createStore } from "redux";
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case "ADD_TODO":
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ];
-    case "TOGGLE_TODO":
-      return state.map(todo =>
-        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
-      );
-    default:
-      return state;
-  }
+const defaultState = {
+  inputValue: "Writing something",
+  data: ["早上8点起床", "8:45到公司会议", "18:30下班"]
 };
 
-const visibilityFilter = (state = "SHOW_ALL", action) => {
-  switch (action.type) {
-    case "SET_VISIBILITY_FILTER":
-      return action.filter;
-    default:
-      return state;
-  }
+const todoReducers = (state = defaultState, actions) => {
+  return { ...state, actions };
 };
-
-const todoReducers = combineReducers({
-  todos,
-  visibilityFilter
-});
 
 const store = createStore(todoReducers);
 
