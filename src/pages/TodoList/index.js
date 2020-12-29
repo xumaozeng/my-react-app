@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, List, Input } from "antd";
 import store from "../../store/todoList";
+import { DeleteTwoTone } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import "./index.css";
 
@@ -23,7 +24,13 @@ class TodoList extends Component {
           className="todo-list"
           bordered
           dataSource={data}
-          renderItem={item => <List.Item>{item}</List.Item>}
+          renderItem={item => (
+            <List.Item
+              actions={[<Button type="text" icon={<DeleteTwoTone />} />]}
+            >
+              {item}
+            </List.Item>
+          )}
         />
       </div>
     );
