@@ -29,8 +29,8 @@ class TodoList extends Component {
     this.setState({ value: e.target.value });
   };
 
-  handDelete = item => {
-    store.dispatch(deleteTodo(item));
+  handDelete = index => {
+    store.dispatch(deleteTodo(index));
   };
 
   render() {
@@ -54,13 +54,13 @@ class TodoList extends Component {
           className="todo-list"
           bordered
           dataSource={data}
-          renderItem={item => (
+          renderItem={(item, index) => (
             <List.Item
               actions={[
                 <Button
                   type="text"
                   icon={<DeleteTwoTone />}
-                  onClick={() => this.handDelete(item)}
+                  onClick={() => this.handDelete(index)}
                 />
               ]}
             >

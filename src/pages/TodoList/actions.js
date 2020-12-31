@@ -7,7 +7,7 @@ export const addTodo = data => ({
 });
 
 // 删除
-export const deleteTodo = data => ({
+export const deleteTodo = index => ({
   type: "delete-todo",
-  data: data
+  index: index
 });

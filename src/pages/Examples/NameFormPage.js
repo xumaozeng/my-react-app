@@ -3,32 +3,22 @@ import React, { Component } from "react";
 class NameFormPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "lime" };
+    this.input = React.createRef();
   }
 
-  handleChange = e => {
-    this.setState({ value: e.target.value });
-  };
-
   handleSubmit = e => {
-    alert("你喜欢的风味是：" + this.state.value);
+    alert("A name was submitted:" + this.input.current.value);
     e.preventDefault(); // 组织默认提交行为
   };
 
   render() {
-    const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          选择你喜欢的风味：
-          <select value={value} onChange={this.handleChange}>
-            <option value="grapefruit">葡萄柚</option>
-            <option value="lime">酸橙</option>
-            <option value="coconut">椰子</option>
-            <option value="mango">芒果</option>
-          </select>
+          Name:
+          <input defaultValue="Bob" type="text" ref={this.input} />
         </label>
-        <input type="submit" value="提交" />
+        <input type="submit" value="Submit" />
       </form>
     );
   }

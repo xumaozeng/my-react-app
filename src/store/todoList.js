@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import _ from "lodash";
 
 const defaultState = {
   inputValue: "Writing something",
@@ -13,10 +14,9 @@ const todoReducers = (state = defaultState, actions) => {
         data: [...state.data, actions.data]
       };
     case "delete-todo":
-      return {
-        inputValue: state.inputValue,
-        data: state.data.filter(item => item !== actions.data)
-      };
+      const newState = _.cloneDeep(state);
+      newState.data.splice(actions.index, 1);
+      return newState;
     default:
       return defaultState;
   }
