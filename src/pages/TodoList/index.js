@@ -30,7 +30,11 @@ class TodoList extends Component {
   };
 
   handDelete = index => {
-    store.dispatch(deleteTodo(index));
+    // 延迟一秒后删除
+    setTimeout(() => {
+      console.log(index);
+      store.dispatch(deleteTodo(index));
+    }, 1000);
   };
 
   render() {
