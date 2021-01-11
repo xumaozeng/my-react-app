@@ -1,4 +1,6 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "./sagas"; // 引入异步saga
 
 // 定义state初始化和修改规则，reducer是一个纯函数
 function counterReducer(state = 0, action) {
@@ -13,7 +15,13 @@ function counterReducer(state = 0, action) {
   }
 }
 
-const store = createStore(counterReducer);
+// 创建saga中间件
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(counterReducer, applyMiddleware(sagaMiddleware));
+
+// 运行saga
+sagaMiddleware.run(rootSaga);
 
 /**
  * 1、combineReducers({reducer1,reducer2...})创建多个reducers对象集合
