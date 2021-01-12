@@ -1,10 +1,10 @@
 import React from "react";
-import ReduxSagaPage from "./pages/Examples/ReduxSagaPage";
+import ExamplePage from "./pages/Examples/ExamplePage";
 
 function App() {
   return (
     <div className="App">
-      <ReduxSagaPage />
+      <ExamplePage />
     </div>
   );
 }
