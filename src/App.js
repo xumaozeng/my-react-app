@@ -1,10 +1,10 @@
 import React from "react";
-import UseReducerPage from "./pages/Examples/UseReducerPage";
+import UserHookPage from "./pages/Examples/UserHookPage";
 
 function App() {
   return (
     <div className="App">
-      <UseReducerPage />
+      <UserHookPage />
     </div>
   );
 }
