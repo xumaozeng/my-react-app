@@ -1,10 +1,10 @@
 import React from "react";
-import ExamplePage from "./pages/Examples/ExamplePage";
+import UseReducerPage from "./pages/Examples/UseReducerPage";
 
 function App() {
   return (
     <div className="App">
-      <ExamplePage />
+      <UseReducerPage />
     </div>
   );
 }
