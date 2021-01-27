@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext, UserContext } from "./Context";
 
 function UseContextPage(props) {
+  // useContext可以使用订阅多个context
   const themeContext = useContext(ThemeContext);
   const { themeColor } = themeContext;
   const userContext = useContext(UserContext);

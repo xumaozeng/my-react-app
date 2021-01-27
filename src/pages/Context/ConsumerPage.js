@@ -5,7 +5,7 @@ class ConsumerPage extends Component {
   render() {
     return (
       <div>
-        {/* 除了使用Class.contextType之外还有Consumer */}
+        {/* 除了使用Class.contextType、useContext之外还有Consumer */}
         <ThemeContext.Consumer>
           {themeContext => (
             <>
