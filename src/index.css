@@ -38,3 +38,11 @@ body {
   padding: 15px;
   border: red 1px solid;
 }
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
