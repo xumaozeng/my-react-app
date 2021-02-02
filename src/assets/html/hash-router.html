@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手写JS前端路由</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#/home">首页</a></li>
+      <li><a href="#/user">用户中心</a></li>
+      <li><a href="#/login">登录</a></li>
+    </ul>
+
+    <div id="view"></div>
+  </body>
+  <script>
+    let view = null;
+    // 当初始的HTML文档被完全加载完成之后触发
+    window.addEventListener("DOMContentLoaded", onLoad);
+
+    // 监听hash路由变化
+    window.addEventListener("hashchange", onHashChange);
+
+    function onLoad() {
+      view = document.getElementById("view");
+      onHashChange();
+    }
+
+    function onHashChange() {
+      const hashUrl = location.hash;
+      switch (hashUrl) {
+        case "#/home":
+          view.innerText = "首页";
+          break;
+        case "#/user":
+          view.innerText = "用户中心";
+          break;
+        case "#/login":
+          view.innerText = "登录";
+          break;
+      }
+    }
+  </script>
+</html>
