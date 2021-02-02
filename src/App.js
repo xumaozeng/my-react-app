@@ -1,10 +1,10 @@
 import React from "react";
-import ContextPage from "./pages/Context/ContextPage";
+import CounterRefPage from "./pages/Examples/CounterRefPage";
 
 function App() {
   return (
     <div className="App">
-      <ContextPage />
+      <CounterRefPage />
     </div>
   );
 }
