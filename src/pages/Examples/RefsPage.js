@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 
 class CustomTextInput extends Component {
   constructor(props) {
     super(props);
     this.textInput = React.createRef();
+    this.ageInput = React.createRef();
   }
 
   focusTextInput = () => {
@@ -11,7 +12,12 @@ class CustomTextInput extends Component {
     this.textInput.current.focus();
   };
 
+  onChange = e => {
+    console.log(e.target.value);
+  };
+
   render() {
+    const AgeWithRef = React.forwardRef(AgeInput);
     return (
       <div>
         <input type="text" ref={this.textInput} />
@@ -20,9 +26,41 @@ class CustomTextInput extends Component {
           value="Focus the text input"
           onClick={this.focusTextInput}
         />
+        <AgeWithRef label="年龄" ref={this.ageInput} onChange={this.onChange} />
+        <CityInput label="城市" />
       </div>
     );
   }
+}
+
+// forwardRef转发
+function AgeInput(props, ref) {
+  return (
+    <div>
+      <label htmlFor="">{props.label}</label>
+      <input type="text" ref={ref} onChange={props.onChange} />
+    </div>
+  );
+}
+
+// hooks
+function CityInput(props) {
+  const cityInputRef = useRef(null);
+
+  return (
+    <div>
+      <label htmlFor="">{props.label}</label>
+      <input type="text" ref={cityInputRef} />
+      <button
+        onClick={() => {
+          let val = cityInputRef.current.value;
+          console.log("city", val);
+        }}
+      >
+        click
+      </button>
+    </div>
+  );
 }
 
 class RefsPage extends Component {
@@ -31,30 +69,12 @@ class RefsPage extends Component {
     this.textInput = React.createRef();
   }
   componentDidMount() {
-    console.log(this.textInput.current);
+    // console.log(this.textInput.current);
     this.textInput.current.focusTextInput();
   }
   render() {
     return <CustomTextInput ref={this.textInput} />;
   }
-}
-
-// eslint-disable-next-line
-function logProps(Component) {
-  class LogProps extends Component {
-    componentDidUpdate(prevProps) {
-      console.log("old props:", prevProps);
-      console.log("new props:", this.props);
-    }
-    render() {
-      const { forwardedRef, ...rest } = this.props;
-      return <Component ref={forwardedRef} {...rest} />;
-    }
-  }
-
-  return React.forwardRef((props, ref) => {
-    return <LogProps {...props} forwardedRef={ref} />;
-  });
 }
 
 export default RefsPage;
