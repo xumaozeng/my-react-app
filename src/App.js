@@ -1,9 +1,9 @@
-import RefsPage from "./pages/Examples/RefsPage";
+import UseEffectPage from "./pages/Hooks/UseEffectPage";
 
 function App() {
   return (
     <div className="App">
-      <RefsPage />
+      <UseEffectPage />
     </div>
   );
 }
