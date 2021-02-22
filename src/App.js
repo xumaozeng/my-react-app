@@ -1,9 +1,9 @@
-import UseReducerPage from "./pages/Hooks/UseReducerPage";
+import UseMemoPage from "./pages/Hooks/UseMemoPage";
 
 function App() {
   return (
     <div className="App">
-      <UseReducerPage />
+      <UseMemoPage />
     </div>
   );
 }
