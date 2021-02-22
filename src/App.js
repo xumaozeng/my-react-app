@@ -1,9 +1,9 @@
-import UseMemoPage from "./pages/Hooks/UseMemoPage";
+import UseHookPage from "./pages/Hooks/UseHookPage";
 
 function App() {
   return (
     <div className="App">
-      <UseMemoPage />
+      <UseHookPage />
     </div>
   );
 }
