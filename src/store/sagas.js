@@ -1,5 +1,12 @@
 import { put, takeEvery, delay, all } from "redux-saga/effects";
 
+/**
+ * redux-saga是一个用于管理应用程序的副作用的库，类比redux-thunk
+ * 监听 takeEvery
+ * 调用异步操作 call
+ * 状态更新 (dispatch) put
+ */
+
 function* helloSaga() {
   const result = yield "Hello, Sagas!";
   console.log(result);
