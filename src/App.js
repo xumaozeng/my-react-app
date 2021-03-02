@@ -1,9 +1,9 @@
-import UseHookPage from "./pages/Hooks/UseHookPage";
+import ReduxPage from "./pages/Examples/ReduxPage";
 
 function App() {
   return (
     <div className="App">
-      <UseHookPage />
+      <ReduxPage />
     </div>
   );
 }
