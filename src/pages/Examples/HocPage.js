@@ -1,29 +1,41 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
 
-// hoc，高阶组件是个函数，返回值是新的组件
+const DataSource = {};
 
-const foo = Cmp => props => {
-  return (
-    <div className="border">
-      <Cmp {...props} omg="omg" />
-    </div>
-  );
+function CommentList(props) {
+  return <div></div>;
+}
+
+function BlogPost(props) {
+  return <div></div>;
+}
+
+// 接收一个组件...
+const withSubscription = (WrappedComponent, selectData) => props => {
+  // 返回另一个组件
+
+  const [data, setData] = useState(selectData(DataSource, props));
+  const handleChange = () => {
+    setData(selectData(DataSource, props));
+  };
+
+  useEffect(() => {
+    DataSource.addChangeListener(handleChange);
+    return () => {
+      DataSource.removeChangeListener(handleChange);
+    };
+  });
+
+  return <WrappedComponent data={data} {...props} />;
 };
 
-function Child(props) {
-  return <div>Child</div>;
-}
+// HOC高阶组件
+export const CommentListWithSubscription = withSubscription(
+  CommentList,
+  DataSource => DataSource.getComments()
+);
 
-const Foo = foo(foo(Child));
-
-class HocPage extends Component {
-  render() {
-    return (
-      <div>
-        <h3>HocPage</h3>
-        <Foo />
-      </div>
-    );
-  }
-}
-export default HocPage;
+export const BlogPostWithSubscription = withSubscription(
+  BlogPost,
+  (DataSource, props) => DataSource.getBlogPost(props.id)
+);

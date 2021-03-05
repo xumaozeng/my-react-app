@@ -1,25 +1,21 @@
-import React, { Component } from "react";
+import { useRef } from "react";
 
-class FileInputPage extends Component {
-  constructor(props) {
-    super(props);
-    this.fileInput = React.createRef();
-  }
-  handleSubmit = e => {
+function FileInputPage(props) {
+  const fileInput = useRef(null);
+
+  const handleSubmit = e => {
     e.preventDefault();
-    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
+    console.log(fileInput.current.files[0].name);
   };
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          上传文件：
-          <input type="file" ref={this.fileInput} />
-        </label>
-        <br />
-        <button type="sumbit">Submit</button>
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Upload file:
+        <input type="file" ref={fileInput} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 export default FileInputPage;

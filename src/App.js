@@ -1,9 +1,9 @@
-import Reservation from "./pages/Examples/Reservation";
+import FileInputPage from "./pages/Examples/FileInputPage";
 
 function App() {
   return (
     <div className="App">
-      <Reservation />
+      <FileInputPage />
     </div>
   );
 }
