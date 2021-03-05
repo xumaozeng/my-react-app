@@ -1,9 +1,9 @@
-import ReduxPage from "./pages/Examples/ReduxPage";
+import Reservation from "./pages/Examples/Reservation";
 
 function App() {
   return (
     <div className="App">
-      <ReduxPage />
+      <Reservation />
     </div>
   );
 }
