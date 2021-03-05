@@ -1,9 +1,9 @@
-import FileInputPage from "./pages/Examples/FileInputPage";
+import UseMemoPage from "./pages/Examples/UseMemoPage";
 
 function App() {
   return (
     <div className="App">
-      <FileInputPage />
+      <UseMemoPage />
     </div>
   );
 }

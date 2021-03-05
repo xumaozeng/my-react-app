@@ -2,6 +2,8 @@ import React, { useState, useCallback, PureComponent } from "react";
 
 function UseCallbackPage(props) {
   const [count, setCount] = useState(0);
+  
+  // useCallback返回一个缓存过的函数
   const addClick = useCallback(() => {
     let sum = 0;
     for (let i = 0; i < count; i++) {
