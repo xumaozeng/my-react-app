@@ -1,9 +1,9 @@
-import UseMemoPage from "./pages/Examples/UseMemoPage";
+import ReactMemoPage from "./pages/Optimization/ReactMemoPage";
 
 function App() {
   return (
     <div className="App">
-      <UseMemoPage />
+      <ReactMemoPage />
     </div>
   );
 }
