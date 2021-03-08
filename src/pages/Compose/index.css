@@ -1,0 +1,23 @@
+.FancyBorder-blue {
+  color: blue;
+}
+
+.Dialog-title {
+  color: red;
+}
+
+.Dialog-message {
+  font-weight: bold;
+}
+
+.SplitPane {
+  display: flex;
+}
+
+.SplitPane-left {
+  flex: auto;
+}
+
+.SplitPane-right {
+  flex: none;
+}

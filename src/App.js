@@ -1,9 +1,9 @@
-import ReactMemoPage from "./pages/Optimization/ReactMemoPage";
+import SplitPane from "./pages/Compose/SplitPane";
 
 function App() {
   return (
     <div className="App">
-      <ReactMemoPage />
+      <SplitPane />
     </div>
   );
 }
