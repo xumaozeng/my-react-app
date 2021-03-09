@@ -1,9 +1,9 @@
-import SplitPane from "./pages/Compose/SplitPane";
+import LifeCyclePage from "./pages/Examples/LifeCyclePage";
 
 function App() {
   return (
     <div className="App">
-      <SplitPane />
+      <LifeCyclePage />
     </div>
   );
 }
