@@ -1,9 +1,9 @@
-import LifeCyclePage from "./pages/Examples/LifeCyclePage";
+import MouseTracker from "./pages/ComponentCommunication/MouseTracker";
 
 function App() {
   return (
     <div className="App">
-      <LifeCyclePage />
+      <MouseTracker />
     </div>
   );
 }
