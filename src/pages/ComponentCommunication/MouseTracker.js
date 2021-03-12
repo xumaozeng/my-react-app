@@ -1,11 +1,12 @@
 import { Component } from "react";
+import cat from "../../assets/images/cat.jpg";
 
 function Cat(props) {
   const { mouse } = props;
   return (
     <img
       alt="cat"
-      src="../../assets/images/cat.jpg"
+      src={cat}
       style={{
         position: "absolute",
         left: mouse.x,
