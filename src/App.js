@@ -1,9 +1,9 @@
-import MouseTracker from "./pages/ComponentCommunication/MouseTracker";
+import Greeting from "./pages/Hooks/CustomHook/Greeting";
 
 function App() {
   return (
     <div className="App">
-      <MouseTracker />
+      <Greeting />
     </div>
   );
 }
