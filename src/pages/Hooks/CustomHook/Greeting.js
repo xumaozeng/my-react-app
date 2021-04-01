@@ -4,14 +4,12 @@ import { ThemeContext } from "./context";
 import "./index.css";
 
 function Greeting(props) {
-  const name = useInput("xiaoxu");
-  const surname = useInput("fangfang");
+  const name = useFormInput("xiaoxu");
+  const surname = useFormInput("fangfang");
   const theme = useContext(ThemeContext);
-  const width = useWidth();
+  const width = useWindowWidth();
 
-  useEffect(() => {
-    document.title = name.value + "-" + surname.value;
-  });
+  useDocumentTitle(name.value + "-" + surname.value);
 
   return (
     <section className={theme}>
@@ -26,8 +24,15 @@ function Greeting(props) {
   );
 }
 
+// 自定义副作用title-Hook
+function useDocumentTitle(title) {
+  useEffect(() => {
+    document.title = title;
+  });
+}
+
 // 自定义width-Hook
-function useWidth() {
+function useWindowWidth() {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -42,14 +47,14 @@ function useWidth() {
 }
 
 // 自定义input-Hook
-function useInput(name) {
+function useFormInput(name) {
   const [value, setValue] = useState(name);
-  function handleInput(e) {
+  function handleChange(e) {
     setValue(e.target.value);
   }
   return {
     value,
-    onChange: handleInput
+    onChange: handleChange
   };
 }
 
