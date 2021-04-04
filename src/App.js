@@ -1,9 +1,9 @@
-import Greeting from "./pages/Hooks/CustomHook/Greeting";
+import RouterPage from "./pages/Routes";
 
 function App() {
   return (
     <div className="App">
-      <Greeting />
+      <RouterPage />
     </div>
   );
 }
