@@ -1,15 +1,8 @@
-import { useState } from "react";
-
 function DlPage(props) {
-  const { dlData } = props;
-  const [isOpen, setIsOpen] = useState(false);
+  const { dlData, name, openName, changeOpen } = props;
   return (
-    <div className={"friend-group " + (isOpen ? "expanded" : "")}>
-      <dt
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      >
+    <div className={"friend-group " + (openName === name ? "expanded" : "")}>
+      <dt onClick={() => changeOpen(openName === name ? "" : name)}>
         {dlData.title}
       </dt>
       {dlData.list.map((item, index) => (
