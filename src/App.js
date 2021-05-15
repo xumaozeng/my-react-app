@@ -1,9 +1,9 @@
-import DL from "./pages/DL";
+import CoursePage from "./pages/Examples/CoursePage";
 
 function App() {
   return (
     <div className="App">
-      <DL />
+      <CoursePage />
     </div>
   );
 }
