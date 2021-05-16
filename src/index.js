@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 // import styles from "./index.module.scss"; // 模块化
-import { Provider } from "react-redux"; // 使后代组件都能获取到store
-import store from "./store";
+// import { Provider } from "react-redux"; // 使后代组件都能获取到store
+// import store from "./store";
 
 /**
  * React负责逻辑控制，数据->VDOM
@@ -15,8 +15,8 @@ import store from "./store";
  */
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  // <Provider store={store}>
+  <App />,
+  // </Provider>,
   document.getElementById("root")
 );
