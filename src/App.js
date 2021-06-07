@@ -1,13 +1,10 @@
-import { BrowserRouter } from "react-router-dom";
-import RouterPage from "./pages/Routes";
+import ReducerPage from "./pages/Examples/ReducerPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <RouterPage />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <ReducerPage />
+    </div>
   );
 }
 
