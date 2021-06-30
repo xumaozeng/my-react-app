@@ -1,9 +1,9 @@
-import ReducerPage from "./pages/Examples/ReducerPage";
+import UseEffectPage from "./pages/Examples/UseEffectPage";
 
 function App() {
   return (
     <div className="App">
-      <ReducerPage />
+      <UseEffectPage />
     </div>
   );
 }
