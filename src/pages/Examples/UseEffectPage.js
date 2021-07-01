@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 
 function UseEffectPage(props) {
-  const [, setState] = useState(true);
+  const [count, setCount] = useState(0);
 
-  useEffect(
-    () => {
-      setState(false);
-      setState(true);
-      setState(false);
-      setState(true);
-    },
-    // eslint-disable-next-line
-    []
-  );
-  console.log(1);
+  useEffect(() => {
+    setCount(2);
+    console.log(1);
+    setCount(0);
+  }, []);
+
+  console.log("useEffect");
+
   return (
     <div>
       <h3>UseEffectPage</h3>
+      <p>You clicked {count} times</p>
+      {/* <button onClick={() => setCount(count + 1)}>Click me</button> */}
     </div>
   );
 }
