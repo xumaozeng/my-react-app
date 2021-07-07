@@ -1,9 +1,9 @@
-import UseEffectPage from "./pages/Examples/UseEffectPage";
+import SetStatePage from "./pages/Examples/SetStatePage";
 
 function App() {
   return (
     <div className="App">
-      <UseEffectPage />
+      <SetStatePage />
     </div>
   );
 }
