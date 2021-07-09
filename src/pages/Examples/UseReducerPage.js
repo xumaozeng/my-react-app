@@ -1,23 +1,34 @@
 import React, { useReducer } from "react";
 
+function init(initialCount) {
+  return { count: initialCount };
+}
+
 function reducer(state, action) {
   switch (action.type) {
-    case "add":
-      return state + 1;
-    case "sub":
-      return state - 1;
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    case "reset":
+      return init(action.payload);
     default:
-      return state;
+      throw new Error("error");
   }
 }
 
-function UseReducerPage() {
-  const [count, dispatch] = useReducer(reducer, 0);
+function UseReducerPage({ initialCount }) {
+  const [state, dispatch] = useReducer(reducer, initialCount, init);
   return (
     <div>
-      <h2>现在的分数是{count}</h2>
-      <button onClick={() => dispatch({ type: "add" })}>增加</button>
-      <button onClick={() => dispatch({ type: "sub" })}>减少</button>
+      <h2>现在的分数是{state.count}</h2>
+      <button
+        onClick={() => dispatch({ type: "reset", payload: initialCount })}
+      >
+        重置
+      </button>
+      <button onClick={() => dispatch({ type: "increment" })}>增加</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>减少</button>
     </div>
   );
 }
